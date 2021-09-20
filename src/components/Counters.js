@@ -28,6 +28,9 @@ const Counters = () => {
   const subtract = (counter) => {
     const tempCounters = [...counters];
     const counterIndex = tempCounters.indexOf(counter);
+    if (tempCounters[counterIndex].count === 0) {
+      return;
+    }
     tempCounters[counterIndex].count--;
     setCounters(tempCounters);
   }
